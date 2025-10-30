@@ -1,0 +1,9 @@
+{
+    "compilerOptions"  : { 
+        "strict" : true, // yk to use strict mode
+        "target" : "ESNext", // to tell ts to generate es syntax module
+        "module" : "NodeNext", // to tell ts that our code is written with es syntax
+        "outDir" : "../../dist-electron", // output
+        "skipLibCheck" : true // ignore errors from dependencies n stuff
+    }, 
+}
