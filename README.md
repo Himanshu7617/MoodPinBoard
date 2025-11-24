@@ -1,6 +1,11 @@
 # MoodBoard_main
 Create vision boards for your mood
 
+## Project links
+
+- Live site: [moodpinboard.me](https://www.moodpinboard.me/)
+- Windows download: [moodboard 0.0.0](https://github.com/Himanshu7617/MoodPinBoard/releases/download/v1/moodboard.0.0.0.exe)
+
 
 ## Screenshots
 
