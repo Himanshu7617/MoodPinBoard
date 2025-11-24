@@ -29,3 +29,5 @@ dist-ssr
 dist-react
 dist-electron
 dist 
+
+out/

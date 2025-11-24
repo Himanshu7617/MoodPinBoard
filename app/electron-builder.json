@@ -1,15 +1,21 @@
 {
-    "appId" : "com.moodboard.www", 
-    "files" : ["dist-electron", "dist-react"], 
-    "icon" : "src/assets/appIcon.png",
-    "mac" : {
-        "target" : "dmg"
-    }, 
-    "linux" : {
-        "target" : "AppImage", 
-        "category" : "Utility"
-    }, 
-    "win" : { 
-        "target" : ["portable", "msi"]
-    }
+  "appId": "com.moodboard.www",
+  "files": ["dist-electron", "dist-react"],
+  "extraResources": [],
+  "icon": "src/ui/assets/moodboardIcon.png",
+  "asarUnpack": [
+    "**/*.env",
+    "**/node_modules/@tailwindcss/oxide-*",
+    "**/node_modules/@emnapi/**"
+  ],
+  "mac": {
+    "target": "dmg"
+  },
+  "linux": {
+    "target": "AppImage",
+    "category": "Utility"
+  },
+  "win": {
+    "target": ["portable", "msi"]
+  }
 }
