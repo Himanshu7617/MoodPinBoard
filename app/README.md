@@ -1,54 +1,57 @@
-# React + TypeScript + Vite
+# MoodBoard Desktop App
+Create vision boards with an Electron + React experience tailored for offline-friendly inspiration boards.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Screenshots
 
-Currently, two official plugins are available:
+| Create Board | Manage Boards |
+| --- | --- |
+| ![Create Board view](../website/src/assets/createBoard.png) | ![Board Manager view](../website/src/assets/boardManager.png) |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Download
 
-## Expanding the ESLint configuration
+- Windows (x64) portable build: [moodboard 0.0.0](https://github.com/Himanshu7617/MoodPinBoard/releases/download/v1/moodboard.0.0.0.exe)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Local development setup
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. **Install prerequisites**
+   - Node.js 18+
+   - npm 9+
+2. **Install dependencies**
+   ```powershell
+   npm install
+   ```
+3. **Run the Electron shell with the React UI**
+   ```powershell
+   npm run dev:electron
+   ```
+4. **Run only the React renderer (optional)**
+   ```powershell
+   npm run dev:react
+   ```
+5. **Create production assets + installer**
+   ```powershell
+   npm run transpile:electron
+   npm run build
+   npm run dist:win   # replace with dist:mac or dist:linux as needed
+   ```
+
+## Folder layout
+
+```
+app/
+├── dist-electron/    # Transpiled main/preload files
+├── dist-react/       # Vite build artifacts for the renderer
+├── src/
+│   ├── electron/     # Main process, preload scripts, utilities
+│   └── ui/           # React components, pages, contexts, assets
+├── electron-builder.json
+├── package.json
+└── README.md         # This file
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Key features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Multiple mood boards with drag-and-drop layouts
+- Local persistence via Electron Store for offline access
+- React UI powered by Vite for fast iteration
+- Cross-platform builds through Electron Builder
