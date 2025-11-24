@@ -1,6 +1,14 @@
 # MoodBoard_main
 Create vision boards for your mood
 
+
+## Screenshots
+
+| Create Board | Manage Boards |
+| --- | --- |
+| ![Create Board view](website/src/assets/createBoard.png) | ![Board Manager view](website/src/assets/boardManager.png) |
+
+
 ## Local setup
 
 1. **Install prerequisites**
@@ -50,9 +58,3 @@ MoodBoard_main/
 - Image display and board management pages built with React.
 - Local persistence through Electron Store for offline-friendly usage.
 - Cross-platform packaging via Electron Builder (Windows, macOS, Linux targets).
-
-## Screenshots
-
-| Create Board | Manage Boards |
-| --- | --- |
-| ![Create Board view](website/src/assets/createBoard.png) | ![Board Manager view](website/src/assets/boardManager.png) |
